@@ -1,5 +1,5 @@
 <template>
-  <div class="note-selector" v-bind:class="{active: note === selectedNoteId }" >
+  <div class="note-selector" v-bind:class="{active: note === selectedNote }" >
       <p class="note-selector-title">{{ note.body | formatTitle }}</p>
       <p class="note-selector-timestamp">{{ note.timestamp | formatTimestamp }}</p>
   </div>
@@ -19,6 +19,9 @@ export default {
       } else {
         return body;
       }
+    },
+    formatTimestamp: function(timestamp) {
+      return new Date(timestamp).toUTCString();
     },
   },
 };

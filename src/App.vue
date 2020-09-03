@@ -3,7 +3,7 @@
     <Toolbar />
     <NoteContainer 
     v-bind:notes="notes"
-    v-bind:selectedNotes="selectedNotes"
+    v-bind:selectedNote="selectedNote"
     v-on:selectNote="selectNote"
     />
   </div>
@@ -24,11 +24,11 @@ export default {
     ];
     return {
       notes: initialNotes,
-      selectedNotes: initialNotes[0],
+      selectedNote: initialNotes[0],
     };
   },
   methods: {
-    selectedNote: function(note) {
+    selectNote: function(note) {
       this.selectedNote = note;
     },
   },
