@@ -3,8 +3,6 @@
     <NoteSelector 
       v-for="note in transformedNotes" 
       v-bind:note="note" 
-      v-bind:selectedNoteId="selectedNoteId" 
-      v-on:selectNote="selectNote"
       v-bind:key="note.id" 
       />
   </div>
