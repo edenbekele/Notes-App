@@ -17,7 +17,13 @@ import NoteEditor from "./NoteEditor";
 
 export default {
   name: "note-container",
-  props: ["notes"],
+  props: ["note", "selectedNoteId"],
+  methods: {
+    selectNote: function(note) {
+      console.log("This is the selected note", note, note.id);
+      this.$emit("selectNote", note);
+    },
+  },
   components: {
     NoteSelectors,
     NoteEditor,
