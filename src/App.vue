@@ -1,7 +1,11 @@
 <template>
   <div id="app">
     <Toolbar />
-    <NoteContainer />
+    <NoteContainer 
+    v-bind:notes="notes"
+    v-bind:selectedNotes="selectedNotes"
+    v-on:selectNote="selectNote"
+    />
   </div>
 </template>
 
@@ -11,6 +15,17 @@ import NoteContainer from "./components/NoteContainer";
 
 export default {
   name: "app",
+  data: function() {
+    return {
+      notes: [
+        { id: 1, body: "This is the first note", timestamp: Date.now() },
+        { id: 2, body: "This is the second note", timestamp: Date.now() },
+        { id: 3, body: "This is the third note", timestamp: Date.now() },
+        { id: 4, body: "This is the fourth note", timestamp: Date.now() },
+      ],
+      selectedNoteId: 2,
+    };
+  },
   components: {
     Toolbar,
     NoteContainer,
