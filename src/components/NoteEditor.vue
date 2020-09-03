@@ -1,7 +1,9 @@
 <template>
      <div class="note-editor">
-          <p class="note-editor-info">Timestamp here...</p>
-          <textarea class="note-editor-input">
+          <p class="note-editor-info">{{ selectedNote.timestamp | formatTimestamp }}</p>
+          <textarea class="note-editor-input"
+            v-bind:value="selectedNote.body"
+          >
             First note... 
 
             Note text here...
@@ -12,5 +14,6 @@
 <script>
 export default {
   name: "note-editor",
+  props: ["selectedNote"],
 };
 </script>

@@ -20,9 +20,6 @@ export default {
         return body;
       }
     },
-    formatTimestamp: function(timestamp) {
-      return new Date(timestamp).toUTCString();
-    },
   },
 };
 </script>
