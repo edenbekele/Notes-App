@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Toolbar />
+    <Toolbar v-on:clickNew="createNote" />
     <NoteContainer 
     v-bind:notes="notes"
     v-bind:selectedNote="selectedNote"
@@ -35,6 +35,15 @@ export default {
     updateSelectedNote: function(body) {
       this.selectedNote.body = body;
       this.selectedNote.timestamp = Date.now();
+    },
+    createNote: function() {
+      var newNote = {
+        id: Date.now(),
+        body: "",
+        timestamp: Date.now(),
+      };
+      this.notes.push(newNote);
+      this.selectedNote = newNote;
     },
   },
   components: {
