@@ -109,11 +109,19 @@ export default {
 }
 .toolbar {
   padding: 0.5em;
+  border-bottom: solid;
+  border-width: thin;
+  border-radius: 0.2em;
 }
 .toolbar-button,
 .toolbar-search {
   padding: inherit;
   border-radius: 0.3em;
+  font-family: "Tenor Sans", sans-serif;
+  border: solid;
+  border-width: thin;
+  border-color: #202020;
+  background-color: #474343;
 }
 .toolbar-search {
   float: right;
@@ -121,12 +129,15 @@ export default {
 .note-container {
   display: flex;
   flex: 1;
+  border-radius: 0.2em;
 }
 .note-selectors {
   flex: 0 0 13em;
+  border-radius: 0.2em;
 }
 .note-selector {
   padding: 1em;
+  border-radius: 0.2em;
 }
 .note-selector p {
   margin: 0;
@@ -176,6 +187,7 @@ export default {
   color: #626262;
   background-color: inherit;
 }
+
 .note-editor-info {
   color: #dcdadc;
 }
