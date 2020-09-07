@@ -7,6 +7,7 @@
       />
       <NoteEditor 
       v-bind:selectedNote="selectedNote"
+      v-on:inputNoteEditor="inputNoteEditor"
       />
   </div>
 </template>
@@ -20,8 +21,10 @@ export default {
   props: ["notes", "selectedNote"],
   methods: {
     selectNote: function(note) {
-      console.log("This is the selected note", note);
       this.$emit("selectNote", note);
+    },
+    inputNoteEditor: function(body) {
+      this.$emit("inputNoteEditor", body);
     },
   },
   components: {

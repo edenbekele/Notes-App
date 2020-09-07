@@ -5,6 +5,7 @@
     v-bind:notes="notes"
     v-bind:selectedNote="selectedNote"
     v-on:selectNote="selectNote"
+    v-on:inputNoteEditor="updateSelectedNote"
     />
   </div>
 </template>
@@ -30,6 +31,10 @@ export default {
   methods: {
     selectNote: function(note) {
       this.selectedNote = note;
+    },
+    updateSelectedNote: function(body) {
+      this.selectedNote.body = body;
+      this.selectedNote.timestamp = Date.now();
     },
   },
   components: {
